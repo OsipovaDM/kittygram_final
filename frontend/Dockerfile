@@ -10,4 +10,5 @@ COPY . .
 RUN npm run build
 RUN npm install --global http-server
 
+# Не выполняется, т. к. переопределена в оркестре
 CMD ["npx", "-y", "http-server", "-p", "8000", "/app/build"]
