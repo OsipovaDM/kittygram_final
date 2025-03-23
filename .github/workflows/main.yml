@@ -60,7 +60,8 @@ jobs:
       # Команд стало больше одной; ставим символ | и пишем команды построчно
       run: |
         python -m ruff check
-        pytest
+        cd backend/
+        python manage.py test
 
   # Собрать и отправить образ приложения на Docker Hub
   build_and_push_to_docker_hub:
@@ -156,10 +157,10 @@ jobs:
       - name: Push to DockerHub
         uses: docker/build-push-action@v5
         with:
-          context: ./gateway/
+          context: ./nginx/
           push: true
           # Тут вместо username должен быть ваш логин на Docker Hub
-          tags: osipovadm/kittygram_frontend:latest
+          tags: osipovadm/kittygram_gateway:latest
   
   send_message:
     runs-on: ubuntu-latest
