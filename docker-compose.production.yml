@@ -27,7 +27,7 @@ services:
     volumes:
       - static:/static
   gateway:
-    image: ./nginx/
+    image: osipovadm/taski_nginx/
     env_file: .env
     ports:
       - 9000:80

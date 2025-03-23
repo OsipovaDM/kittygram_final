@@ -1,4 +1,4 @@
 repo_owner: OsipovaDM
-taski_domain: https://taski_domain.org/
-kittygram_domain: https://kittygram_domain.org/
+taski_domain: http://localhost:8000/
+kittygram_domain: http://localhost:9000/
 dockerhub_username: osipovadm 

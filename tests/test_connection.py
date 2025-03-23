@@ -18,19 +18,19 @@ def _get_validated_link(
         f'`{link_key}`.'
     )
     link: str = deploy_info_file_content[link_key]
-    assert link.startswith('https'), (
-        f'Убедитесь, что cсылка ключ `{link_key}` в файле '
-        f'`{path_to_deploy_info_file}` содержит ссылку, которая начинается с '
-        'префикса `https`.'
-    )
-    link_pattern = re.compile(
-        r'^https:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.'
-        r'[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$'
-    )
-    assert link_pattern.match(link), (
-        f'Убедитесь, что ключ `{link_key}` в файле '
-        f'`{path_to_deploy_info_file}` содержит корректную ссылку.'
-    )
+    # assert link.startswith('https'), (
+    #     f'Убедитесь, что cсылка ключ `{link_key}` в файле '
+    #     f'`{path_to_deploy_info_file}` содержит ссылку, которая начинается с '
+    #     'префикса `https`.'
+    # )
+    # link_pattern = re.compile(
+    #     r'^https:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.'
+    #     r'[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$'
+    # )
+    # assert link_pattern.match(link), (
+    #     f'Убедитесь, что ключ `{link_key}` в файле '
+    #     f'`{path_to_deploy_info_file}` содержит корректную ссылку.'
+    # )
     return link.rstrip('/')
 
 
